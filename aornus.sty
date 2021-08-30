@@ -1,0 +1,81 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{aornus}
+\RequirePackage{ctex}
+%%设置字体
+%\setCJKfamilyfont{song}{Noto Serif SC}		
+%\newcommand{\song}{\CJKfamily{song}}
+%\setCJKfamilyfont{heiti}{Noto Sans SC}
+%\renewcommand{\heiti}{\CJKfamily{heiti}}
+%\setCJKfamilyfont{xinwei}{STxinwei.TTF}
+%\renewcommand{\xinwei}{\CJKfamily{xinwei}}
+%
+%Windows字体
+\setCJKfamilyfont{song}{Noto Serif SC.otf}		
+\newcommand{\song}{\CJKfamily{song}}
+\setCJKfamilyfont{heiti}{Noto Sans SC.otf}
+\renewcommand{\heiti}{\CJKfamily{heiti}}
+\setCJKfamilyfont{xinwei}{STxinwei.TTF}
+\newcommand{\xinwei}{\CJKfamily{xinwei}}
+\setCJKfamilyfont{lishu}{SIMLI.TTF}
+\newcommand{\lishu}{\CJKfamily{lishu}}
+%
+\RequirePackage[contents = {\song  } , scale = 7, color = black!10, angle=50, opacity=1]{background}  %设置水印
+\RequirePackage{amsmath,amssymb,amsthm}%ams数学公式拓展
+\RequirePackage{mathtools,xfp,siunitx}%公式定制以及更多的数学符号、矩阵
+\RequirePackage{hologo,verbatim,fancyvrb,layout,multicol,titlesec}%排版
+\RequirePackage[normalem]{ulem}
+\RequirePackage{colortbl,tabularx,multirow,makecell,booktabs}
+\RequirePackage{graphicx,xcolor,float,tcolorbox,subfig,pdfpages}%颜色盒子,浮动图片,插入pdf文件
+%\RequirePackage{minted}%代码高亮
+\RequirePackage{makeidx}%索引
+
+\RequirePackage[top=2.54cm, bottom=2.54cm, left=3.18cm, right=3.18cm,headsep=1.0cm]{geometry}
+\RequirePackage{tikz,indentfirst}%缩进
+\RequirePackage{siunitx}%单位
+%
+%
+%设置页眉页脚
+%
+\RequirePackage{fancyhdr} %设置页眉页脚
+\fancypagestyle{Aornus-style}
+{	\fancyhead{} %格式化原来的页眉页脚
+	\fancyfoot{} %格式化原来的页眉页脚
+%	\fancyhead[L]{\LaTeX}
+	\fancyhead[C]{\zihao{-5}新疆大学本科课程设计}
+%	\fancyhead[R]{\thepage}
+%	\fancyfoot[L]{ 修然自存}
+	\fancyfoot[C]{\zihao{-5} \thepage}
+	\renewcommand{\headrulewidth}{0.8pt} 
+	\renewcommand{\footrulewidth}{0pt} }
+%
+%---------------------------------------------
+%
+%摘要格式
+
+%目录格式
+\ctexset{	contentsname = {\zihao{3}\heiti 目\ \ 录}	}
+%设置超链接
+\RequirePackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=black,      
+	urlcolor=black,
+	citecolor=black,
+}
+%
+%
+	\newenvironment{king}
+	{\rule{1ex}{1ex}%
+		\hspace{\stretch{1}}}
+	{\hspace{\stretch{1}}%
+		\rule{1ex}{1ex}}
+
+\graphicspath{{photos/}} %定义图片路径,让文件结构更有秩序.
+%
+%伪cls定义
+
+%\titleformat*{\chapter}{\centering \zihao{3} \heiti}
+\titleformat*{\section}{\zihao{4}\heiti}%{第\,\thesection\,节}{1em}{}
+\titleformat*{\subsection}{\zihao{-4}\song}
+\titleformat*{\subsubsection}{\zihao{-4}\song}
